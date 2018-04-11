@@ -1,0 +1,72 @@
+---Insert-----
+create procedure [dbo].[Ari_Insert]
+(
+@Name varchar(20),
+@Address varchar(20),
+@Contect decimal(20)
+)
+as
+insert into Arish
+(
+Name,
+Address,
+Contect
+)
+values
+(
+@Name,
+@Address,
+@Contect
+)
+----Update----
+ 
+ALTER procedure [dbo].[Ari_Update]
+(
+@Id int,
+@Name varchar(20),
+@Address varchar(20),
+@Contect decimal(18,2)
+)
+as
+update Arish
+set
+Name=@Name,
+Address=@Address,
+Contect=@Contect
+from Arish
+where Id=@Id
+
+----Delete----
+
+ALTER procedure [dbo].[Ari_Delete]
+(
+@Id int
+)
+as
+begin
+delete from  Arish
+where Id=@Id
+
+---GetById----
+ALTER procedure [dbo].[Ari_GetById]
+(
+@Id int
+)
+As
+Begin
+select
+Name,
+Address,
+Contect
+from Arish
+where Id=@Id
+
+----GetAll---
+ALTER procedure [dbo].[Ari_GetAll]
+as
+select
+Name,
+Address,
+Contect
+from Arish
+
